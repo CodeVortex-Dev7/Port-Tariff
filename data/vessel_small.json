@@ -1,0 +1,15 @@
+{
+  "port_name": "Durban",
+  "vessel_metadata": { "name": "LITTLE BOAT" },
+  "technical_specs": {
+    "type": "Pleasure Vessel",
+    "dwt": 10,
+    "gross_tonnage": 20,
+    "loa_meters": 12.5,
+    "beam_meters": 4.0
+  },
+  "operational_data": {
+    "days_alongside": 2.0,
+    "num_operations": 1
+  }
+}

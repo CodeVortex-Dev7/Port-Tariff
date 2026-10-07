@@ -1,0 +1,8 @@
+{
+  "LIGHT_DUES": ["light dues", "light dues on vessels", "lighthouse dues", "conservancy dues"],
+  "PORT_DUES": ["port dues", "port fees on vessels", "harbour dues", "harbor dues", "seaport dues", "zeehavengeld"],
+  "TOWAGE_DUES": ["towage", "towage dues", "tugs", "tug assistance", "tugs vessel assistance and or attendance"],
+  "VTS_DUES": ["vts", "vts dues", "vts charges", "vessel traffic services"],
+  "PILOTAGE_DUES": ["pilotage", "pilotage dues", "pilotage services", "pilotage fees"],
+  "RUNNING_LINES": ["running lines", "running of vessel lines", "berthing services", "mooring", "mooring services", "line handling"]
+}

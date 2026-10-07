@@ -1,0 +1,39 @@
+[project]
+name = "port-tariff"
+version = "0.1.0"
+description = "Autonomous Agentic Port Tariff Calculation Engine"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "chromadb>=1.5.0",
+    "fastapi[standard]>=0.142.2",
+    "httpx>=0.28.1",
+    "langchain>=1.4.0",
+    "langchain-chroma>=1.1.0",
+    "langchain-core>=1.6.0",
+    "langchain-openai>=0.3.0",
+    "langchain-text-splitters>=1.1.3",
+    "markitdown[pdf]>=0.1.8",
+    "openai>=3.23.0",
+    "pdfminer.six>=20231228",
+    "pdfplumber>=0.11.0",
+    "pydantic>=2.13.5",
+    "pydantic-settings>=2.15.0",
+    "python-multipart>=0.0.32",
+    "structlog>=24.4.0",
+]
+
+[project.scripts]
+port-tariff = "port_tariff.main:main"
+
+[build-system]
+requires = ["uv_build>=0.12.0,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "mypy>=2.4.0",
+    "pytest>=9.1.1",
+    "pytest-asyncio>=1.4.0",
+    "pytest-cov>=7.1.0",
+]

@@ -1,0 +1,43 @@
+services:
+  tei-embeddings:
+    image: ghcr.io/huggingface/text-embeddings-inference:cpu-1.9
+    container_name: tei-bge-m3
+    ports:
+      - "8080:80"
+    volumes:
+      - tei-cache:/data
+    command:
+      - "--model-id"
+      - "BAAI/bge-m3"
+      - "--max-client-batch-size"
+      - "4"
+      - "--max-batch-tokens"
+      - "2048"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  # api:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   container_name: port-tariff-api
+  #   ports:
+  #     - "8000:8000"
+  #   environment:
+  #     - EMBEDDING_API_BASE=http://tei-embeddings:80/v1
+  #     - EMBEDDING_MODEL_NAME=BAAI/bge-m3
+  #   env_file:
+  #     - .env
+  #   volumes:
+  #     - chroma-data:/app/data/chroma_db
+  #   depends_on:
+  #     tei-embeddings:
+  #       condition: service_healthy
+
+volumes:
+  tei-cache:
+  chroma-data:
